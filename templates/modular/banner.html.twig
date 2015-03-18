@@ -1,0 +1,15 @@
+<section id="banner">
+    <div class="inner">
+        <header>
+            <h2>{{ page.header.title }}</h2>
+        </header>
+        {{ content }}
+        <footer>
+            <ul class="buttons vertical">
+                {% for button in page.header.buttons %}
+                    <li><a href="{{ button.url }}" class="button fit scrolly">{{ button.text }}</a></li>
+                {% endfor %}
+            </ul>
+        </footer>
+    </div>
+</section>

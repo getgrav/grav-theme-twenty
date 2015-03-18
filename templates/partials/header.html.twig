@@ -1,0 +1,28 @@
+<header id="header" class="alt">
+    <h1 id="logo"><a href="{{ base_url_absolute }}">{{ site.logo.text1 }} <span>{{ site.logo.text2 }}</span></a></h1>
+    <nav id="nav">
+        <ul>
+            <li class="current"><a href="{{ base_url_absolute }}">Welcome</a></li>
+            <li class="submenu">
+                <a href="">Layouts</a>
+                <ul>
+                    {% for menu in site.menu %}
+                        <li><a href="{{ menu.link }}">{{ menu.text }}</a></li>
+                    {% endfor %}
+                    <li class="submenu">
+                        <a href="">Submenu</a>
+                        <ul>
+                            {% for submenu in site.submenu %}
+                                <li><a href="{{ submenu.link }}">{{ submenu.text }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            {% for button in site.buttons %}
+                <li><a href="{{ button.link }}" class="button special">{{ button.text }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+</header>

@@ -9,6 +9,7 @@
         <link rel="icon" type="image/png" href="{{ theme_url }}/images/favicon.png" />
 
         {% block stylesheets %}
+        <noscript>
             {% do assets.addCss('theme://css/skel.css') %}
             {% do assets.addCss('theme://css/style.css') %}
             {% do assets.addCss('theme://css/style-wide.css') %}
@@ -19,6 +20,7 @@
          <!--[if lte IE 9]>
          {% do assets.addCss('theme://css/ie/v9.css') %}
          <![endif]-->
+        </noscript>
      {% endblock %}
         {{ assets.css() }}
 
@@ -34,16 +36,11 @@
         {{ assets.js() }}
         {% endblock head%}
     </head>
-    <body id="page-top" class="index">
+    <body class="index">
 
-        {% block header_navigation %}
-            {% include 'partials/navigation.html.twig' %}
+        {% block header %}
+            {% include 'partials/header.html.twig' %}
         {% endblock %}
-
-        {% block header %}{% endblock %}
-
-            {% block showcase %}{% endblock %}
-
                 {% block body %}
                     {% block content %}{% endblock %}
                     {% endblock %}
@@ -51,15 +48,6 @@
                     {% block footer %}
                         {% include 'partials/footer.html.twig' %}
                     {% endblock %}
-
-                    {% block javascripts_bottom %}
-                        {% do assets.addJs('theme://js/bootstrap.min.js',100) %}
-                        {% do assets.addJs('theme://js/jquery.easing.min.js') %}
-                        {% do assets.addJs('theme://js/classie.js') %}
-                        {% do assets.addJs('theme://js/cbpAnimatedHeader.js') %}
-                        {% do assets.addJs('theme://js/twenty.js') %}
-                    {% endblock %}
-                    {{ assets.js() }}
 
                 </body>
                 </html>

@@ -9,19 +9,27 @@
         <link rel="icon" type="image/png" href="{{ theme_url }}/images/favicon.png" />
 
         {% block stylesheets %}
-            {% do assets.addCss('theme://css-compiled/global.css',100) %}
-            {% do assets.addCss('theme://css/font-awesome/css/font-awesome.min.css',100) %}
-            <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-            <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-            <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-            <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-            <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-        {% endblock %}
+            {% do assets.addCss('theme://css/skel.css') %}
+            {% do assets.addCss('theme://css/style.css') %}
+            {% do assets.addCss('theme://css/style-wide.css') %}
+            {% do assets.addCss('theme://css/style-noscript.css') %}
+        <!--[if lte IE 8]>
+         {% do assets.addCss('theme://css/ie/v8.css') %}
+         <![endif]-->
+         <!--[if lte IE 9]>
+         {% do assets.addCss('theme://css/ie/v9.css') %}
+         <![endif]-->
+     {% endblock %}
         {{ assets.css() }}
 
         {% block javascripts %}
             {% do assets.add('jquery',101) %}
-
+            {% do assets.addJs('theme://js/jquery.dropotron.min.js') %}
+            {% do assets.addJs('theme://js/jquery.scrolly.min.js') %}
+            {% do assets.addJs('theme://js/jquery.scrollgress.min.js') %}
+            {% do assets.addJs('theme://js/skel.min.js') %}
+            {% do assets.addJs('theme://js/skel-layers.min.js') %}
+            {% do assets.addJs('theme://js/init.js') %}
         {% endblock %}
         {{ assets.js() }}
         {% endblock head%}

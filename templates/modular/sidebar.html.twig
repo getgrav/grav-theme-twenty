@@ -1,7 +1,9 @@
 <section class="wrapper style4 container">
+    {% if page.header.sidebar_position != 'none' %}
     <div class="row 150%">
-        
+    {% endif %}     
         {% if page.header.sidebar_position == 'left' %}
+            {% if page.header.sidebar_position != 'none' %}
             <div class="4u 12u(narrower)">
                 <div class="sidebar">
                     {% for module in page.header.sidebar_modules %}
@@ -26,7 +28,10 @@
                     {% endfor %} 
                 </div>
             </div>
+            {% endif %}
+            {% if page.header.sidebar_position != 'none' %}
             <div class="8u 12u(narrower) important(narrower)">
+            {% endif %}    
                 <div class="content">
                     <section>
                         {% if page.header.featured_image %}
@@ -38,11 +43,15 @@
                         {{ content }}
                     </section>
                 </div>
+            {% if page.header.sidebar_position != 'none' %}
             </div>
+            {% endif %}
         {% endif %}
 
-        {% if page.header.sidebar_position == 'right' %}
+        {% if page.header.sidebar_position == 'right' or page.header.sidebar_position == 'none' %}
+            {% if page.header.sidebar_position != 'none' %}
             <div class="8u 12u(narrower)">
+            {% endif %}     
                 <div class="content">
                     <section>
                         {% if page.header.featured_image %}
@@ -54,7 +63,10 @@
                         {{ content }}
                     </section>
                 </div>
+            {% if page.header.sidebar_position != 'none' %}
             </div>
+            {% endif %}
+            {% if page.header.sidebar_position != 'none' %}
             <div class="4u 12u(narrower)">
                 <div class="sidebar">
                     {% for module in page.header.sidebar_modules %}
@@ -79,7 +91,9 @@
                     {% endfor %} 
                 </div>
             </div>
+            {% endif %}
         {% endif %}
-
+    {% if page.header.sidebar_position != 'none' %}
     </div>
+    {% endif %}
 </section>

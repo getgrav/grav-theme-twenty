@@ -36,7 +36,7 @@
         {{ assets.js() }}
         {% endblock head%}
     </head>
-    <body class="index">
+    <body class="{{ page.header.body_class }}">
 
         {% block header %}
             {% include 'partials/header.html.twig' %}

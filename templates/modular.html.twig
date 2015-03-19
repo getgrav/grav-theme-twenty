@@ -12,6 +12,15 @@
         {% endif %}
     {% endfor %}
     <article id="main">
+        
+        {% if page.header.subtitle or page.header.description or page.header.icon %}
+            <header class="special container">
+                <span class="icon fa-{{ page.header.icon }}"></span>
+                <h2>{{ page.header.subtitle }}</h2>
+                <p>{{ page.header.description }}</p>
+            </header>
+        {% endif %}
+
         {% for module in page.collection() %}
             {% if module.menu != 'before_article' and module.menu != 'after_article' %}
                 {{ module.content }}

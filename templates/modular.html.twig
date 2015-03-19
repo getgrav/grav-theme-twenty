@@ -7,15 +7,20 @@
 {% block content %}
     {{ page.content }}
     {% for module in page.collection() %}
-        {% if module.menu == 'banner' %}
+        {% if module.menu == 'before_article' %}
             {{ module.content }}
         {% endif %}
     {% endfor %}
     <article id="main">
         {% for module in page.collection() %}
-            {% if module.menu != 'banner' %}
+            {% if module.menu != 'before_article' and module.menu != 'after_article' %}
                 {{ module.content }}
             {% endif %}
         {% endfor %}
     </article>
+    {% for module in page.collection() %}
+        {% if module.menu == 'after_article' %}
+            {{ module.content }}
+        {% endif %}
+    {% endfor %}
 {% endblock %}

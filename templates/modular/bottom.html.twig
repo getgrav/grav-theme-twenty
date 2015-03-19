@@ -1,0 +1,13 @@
+<section id="cta">
+    <header>
+        <h2>{{page.header.title}}</h2>
+        {{ content }}
+    </header>
+    <footer>
+        <ul class="buttons">
+            {% for button in page.header.buttons %}
+                <li><a href="{{ button.url }}" class="button {% if button.class %}{{ button.class }}{% endif %}">{{ button.text }}</a></li>
+            {% endfor %}
+        </ul>
+    </footer>
+</section>

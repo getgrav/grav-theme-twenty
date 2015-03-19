@@ -1,0 +1,15 @@
+<section class="wrapper style1 container special">
+    <div class="row">
+        {% for item in page.header.features %}
+            <div class="4u 12u(narrower)">
+                <section>
+                    <span class="icon featured fa-{{ item.icon }}"></span>
+                    <header>
+                        <h3>{{ item.title }}</h3>
+                    </header>
+                    <p>{{ item.text }}</p>
+                </section>
+            </div> 
+        {% endfor %}
+    </div>
+</section>

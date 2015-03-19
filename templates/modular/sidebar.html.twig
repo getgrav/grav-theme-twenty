@@ -1,99 +1,33 @@
 <section class="wrapper style4 container">
     {% if page.header.sidebar_position != 'none' %}
-    <div class="row 150%">
-    {% endif %}     
+        <div class="row 150%">
+        {% endif %}     
         {% if page.header.sidebar_position == 'left' %}
             {% if page.header.sidebar_position != 'none' %}
-            <div class="4u 12u(narrower)">
-                <div class="sidebar">
-                    {% for module in page.header.sidebar_modules %}
-                        <section>
-                            {% if module.featured_image %}
-                                <a href="#" class="image featured"><img src="{{ page.media[module.featured_image].url }}" alt="" /></a>
-                            {% endif %}
-                            <header>
-                                <h3>{{ module.title }}</h3>
-                            </header>
-                            <p>{{ module.content }}</p>
-                            {% if module.buttons %}
-                                <footer>
-                                    <ul class="buttons">
-                                        {% for button in module.buttons %}
-                                            <li><a href="{{ button.url }}" class="button small">{{ button.text }}</a></li>
-                                        {% endfor %}
-                                    </ul>
-                                </footer>
-                            {% endif %}
-                        </section>
-                    {% endfor %} 
-                </div>
-            </div>
+                {% include 'partials/sidebar_content.html.twig' %}
             {% endif %}
             {% if page.header.sidebar_position != 'none' %}
-            <div class="8u 12u(narrower) important(narrower)">
+                <div class="8u 12u(narrower) important(narrower)">
             {% endif %}    
-                <div class="content">
-                    <section>
-                        {% if page.header.featured_image %}
-                            <a href="#" class="image featured"><img src="{{ page.media[page.header.featured_image].url }}" alt="" /></a>
-                        {% endif %}
-                        <header>
-                            <h3>{{ page.header.title }}</h3>
-                        </header>
-                        {{ content }}
-                    </section>
-                </div>
+                {% include 'partials/sidebar_article.html.twig' %}
             {% if page.header.sidebar_position != 'none' %}
-            </div>
+                </div>
             {% endif %}
         {% endif %}
 
         {% if page.header.sidebar_position == 'right' or page.header.sidebar_position == 'none' %}
             {% if page.header.sidebar_position != 'none' %}
-            <div class="8u 12u(narrower)">
+                <div class="8u 12u(narrower)">
             {% endif %}     
-                <div class="content">
-                    <section>
-                        {% if page.header.featured_image %}
-                            <a href="#" class="image featured"><img src="{{ page.media[page.header.featured_image].url }}" alt="" /></a>
-                        {% endif %}
-                        <header>
-                            <h3>{{ page.header.title }}</h3>
-                        </header>
-                        {{ content }}
-                    </section>
-                </div>
+                {% include 'partials/sidebar_article.html.twig' %}
             {% if page.header.sidebar_position != 'none' %}
-            </div>
+                </div>
             {% endif %}
             {% if page.header.sidebar_position != 'none' %}
-            <div class="4u 12u(narrower)">
-                <div class="sidebar">
-                    {% for module in page.header.sidebar_modules %}
-                        <section>
-                            {% if module.featured_image %}
-                                <a href="#" class="image featured"><img src="{{ page.media[module.featured_image].url }}" alt="" /></a>
-                            {% endif %}
-                            <header>
-                                <h3>{{ module.title }}</h3>
-                            </header>
-                            <p>{{ module.content }}</p>
-                            {% if module.buttons %}
-                                <footer>
-                                    <ul class="buttons">
-                                        {% for button in module.buttons %}
-                                            <li><a href="{{ button.url }}" class="button small">{{ button.text }}</a></li>
-                                        {% endfor %}
-                                    </ul>
-                                </footer>
-                            {% endif %}
-                        </section>
-                    {% endfor %} 
-                </div>
-            </div>
+                {% include 'partials/sidebar_content.html.twig' %}
             {% endif %}
         {% endif %}
-    {% if page.header.sidebar_position != 'none' %}
-    </div>
+        {% if page.header.sidebar_position != 'none' %}
+        </div>
     {% endif %}
 </section>

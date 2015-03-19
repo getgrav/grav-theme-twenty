@@ -1,0 +1,11 @@
+<div class="content">
+    <section>
+        {% if page.header.featured_image %}
+            <a href="#" class="image featured"><img src="{{ page.media[page.header.featured_image].url }}" alt="" /></a>
+        {% endif %}
+        <header>
+            <h3>{{ page.header.title }}</h3>
+        </header>
+        {{ content }}
+    </section>
+</div>

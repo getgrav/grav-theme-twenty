@@ -1,0 +1,24 @@
+<div class="4u 12u(narrower)">
+    <div class="sidebar">
+        {% for module in page.header.sidebar_modules %}
+            <section>
+                {% if module.featured_image %}
+                    <a href="#" class="image featured"><img src="{{ page.media[module.featured_image].url }}" alt="" /></a>
+                {% endif %}
+                <header>
+                    <h3>{{ module.title }}</h3>
+                </header>
+                <p>{{ module.content }}</p>
+                {% if module.buttons %}
+                    <footer>
+                        <ul class="buttons">
+                            {% for button in module.buttons %}
+                                <li><a href="{{ button.url }}" class="button small">{{ button.text }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </footer>
+                {% endif %}
+            </section>
+        {% endfor %} 
+    </div>
+</div>

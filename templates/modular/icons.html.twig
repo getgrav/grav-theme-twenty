@@ -1,0 +1,24 @@
+<section class="wrapper style2 container special-alt">
+    <div class="row 50%">
+        <div class="8u 12u(narrower)">
+            <header>
+                <h2>{{ page.header.title }}</h2>
+            </header>
+            {{ content }}
+            <footer>
+                <ul class="buttons">
+                    {% for button in page.header.buttons %}
+                        <li><a href="{{ button.url }}" class="button">{{ button.text }}</a></li>
+                    {% endfor %}
+                </ul>
+            </footer>
+        </div>
+        <div class="4u 12u(narrower) important(narrower)">
+            <ul class="featured-icons">
+                {% for icons in page.header.icons %}
+                    <li><span class="icon fa-{{ icons.icon }}"><span class="label">{{ icons.label }}</span></span></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

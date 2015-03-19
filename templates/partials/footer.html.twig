@@ -1,25 +1,13 @@
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <span class="copyright">Copyright &copy; {{ site.title }} 2014</span>
-            </div>
-            <div class="col-md-4">
-                <ul class="list-inline social-buttons">
-                    {% for network in site.social %}
-                        <li><a href="{{ network.url }}"><i class="fa fa-{{ network.title }}"></i></a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <ul class="list-inline quicklinks">
-                    {% for link in site.quicklinks %}
-                        <li><a href="{{ link.url }}">{{ link.title }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-    </div>
+<footer id="footer">
+
+    <ul class="icons">
+        {% for item in site.social %}
+             <li><a href="{{ item.url }}" class="icon circle fa-{{ item.icon }}"><span class="label">{{ item.label }}</span></a></li>
+        {% endfor %}
+    </ul>
+
+    <ul class="copyright">
+        <li>&copy; {{ site.copyright.line1 }}</li><li>{{ site.copyright.line2 }} <a href="{{ site.copyright.url }}">{{ site.copyright.url_label }}</a></li>
+    </ul>
+    
 </footer>

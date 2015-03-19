@@ -1,0 +1,22 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<article id="main">
+    <header class="special container">
+        <span class="icon fa-{{ page.header.icon }}"></span>
+        <h2>{{ page.header.title }}</h2>
+        <p>{{ page.header.description }}</p>
+    </header>
+
+    <section class="wrapper style4 special container 75%">
+        <div class="content">
+            {% if config.plugins.simple_form.enabled %}
+                {% set simple_form_config = page.header.simple_form ?: config.themes.twenty.simple_form %}
+                {{ simple_form(simple_form_config) }}
+            {% endif %}
+        </div>
+
+    </section>
+
+</article>
+{% endblock %}

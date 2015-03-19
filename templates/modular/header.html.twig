@@ -1,10 +1,5 @@
-<header>
-    <div class="container">
-        <div class="intro-text">
-            {{ content }}
-            {% for button in page.header.buttons %}
-                <a class="page-scroll btn btn-xl" href="{{ button.url }}">{{ button.text }}</a>
-            {% endfor %}
-        </div>
-    </div>
+<header class="special container">
+    <span class="icon fa-{{ page.header.icon }}"></span>
+    <h2>{{ page.header.title }}</h2>
+    {{ content }}
 </header>

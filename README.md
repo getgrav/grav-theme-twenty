@@ -2,14 +2,14 @@
 
 ![Twenty](assets/readme_1.png)
 
-This Grav theme is a port of the [Twenty theme](http://html5up.net/twenty) by [HTML5 UP](http://html5up.net/).
+This Grav theme is a port of the [Twenty theme](http://html5up.net/twenty) by [HTML5 UP](http://html5up.net/). Twenty is a clean, responsive theme with subtle accents and plenty of room for customization.
 
 # Features
 
-* Fully responsive
+* Fully Responsive
 * Built on HTML5/CSS3/skel
-* Section icons by Font Awesome
-* Released for free under the Creative Commons Attribution 3.0
+* Section Icons by Font Awesome
+* Released for Free Under the Creative Commons Attribution 3.0
 * Social Icons
 * Simple Form Support
 * Layouts: Modular, Right Sidebar, Left Sidebar, No sidebar
@@ -39,6 +39,18 @@ You should now have all the theme files under
 
 >> NOTE: This theme is a modular component for Grav which requires the [Grav](http://github.com/getgrav/grav), [Error](https://github.com/getgrav/grav-theme-error) and [Problems](https://github.com/getgrav/grav-plugin-problems) plugins.
 
+# Setup
+
+If you want to set Twenty as the default theme, you can do so by following these steps:
+
+* Navigate to `/your/site/grav/user/config`.
+* Open the **system.yaml** file.
+* Change the `theme:` setting to `theme: twenty`.
+* Save your changes.
+* Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in Terminal and typing `bin/grav clear-cache`.
+
+Once this is done, you should be able to see the new theme on the frontend. Keep in mind any customizations made to the previous theme will not be reflected as all of the theme and templating information is now being pulled from the **twenty** folder.
+
 # Updating
 
 As development for the Twenty theme continues, new versions may become available that add additional features and functionality, improve compatibility with newer Grav releases, and generally provide a better user experience. Updating Twenty is easy, and can be done through Grav's GPM system, as well as manually.
@@ -61,15 +73,3 @@ Manually updating Twenty is pretty simple. Here is what you will need to do to g
 * Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in terminal and typing `bin/grav clear-cache`.
 
 > Note: Any changes you have made to any of the files listed under this directory will also be removed and replaced by the new set. Any files located elsewhere (for example a YAML settings file placed in `user/config/themes`) will remain intact.
-
-# Setup
-
-If you want to set Twenty as the default theme, you can do so by following these steps:
-
-* Navigate to `/your/site/grav/user/config`.
-* Open the **system.yaml** file.
-* Change the `theme:` setting to `theme: twenty`.
-* Save your changes.
-* Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in Terminal and typing `bin/grav clear-cache`.
-
-Once this is done, you should be able to see the new theme on the frontend. Keep in mind any customizations made to the previous theme will not be reflected as all of the theme and templating information is now being pulled from the **twenty** folder.

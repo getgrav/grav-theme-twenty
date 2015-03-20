@@ -8,12 +8,13 @@ This Grav theme is a port of the [Twenty theme](http://html5up.net/twenty) by [H
 
 * Fully responsive
 * Built on HTML5/CSS3/skel
-* Sections icons by Font Awesome
+* Section icons by Font Awesome
 * Released for free under the Creative Commons Attribution 3.0
 * Social Icons
 * Simple Form Support
-* Additional Menus and sidebar options
-* 
+* Layouts: Modular, Right Sidebar, Left Sidebar, No sidebar
+* Special layouts: Portfolio, Bottom Modules
+
 # Installation
 
 Installing the Twenty theme can be done in one of two ways. Our GPM (Grav Package Manager) installation method enables you to quickly and easily install the theme with a simple terminal command, while the manual method enables you to do so via a zip file.

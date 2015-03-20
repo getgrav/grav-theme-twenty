@@ -25,6 +25,9 @@
         </noscript>
 
         {% block javascripts %}
+            {% if browser.getBrowser == 'msie' and browser.getVersion == 8 %}
+                 {% do assets.addJs('theme://css/ie/html5shiv.js') %}
+            {% endif %}
             {% do assets.add('jquery',101) %}
             {% do assets.addJs('theme://js/jquery.dropotron.min.js') %}
             {% do assets.addJs('theme://js/jquery.scrolly.min.js') %}

@@ -34,9 +34,11 @@
             {% do assets.addJs('theme://js/jquery.scrollgress.min.js') %}
             {% do assets.addJs('theme://js/skel.min.js') %}
             {% do assets.addJs('theme://js/skel-layers.min.js') %}
-            {% do assets.addJs('theme://js/init.js') %}
         {% endblock %}
         {{ assets.js() }}
+
+        {% include 'partials/init.html.twig' %}
+        
         {% endblock head%}
     </head>
     <body class="{{ page.header.body_class }}">

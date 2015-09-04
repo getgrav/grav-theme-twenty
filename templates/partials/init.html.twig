@@ -1,3 +1,4 @@
+<script type="text/javascript">
 /*
 	Twenty by HTML5 UP
 	html5up.net | @n33co
@@ -9,12 +10,12 @@
 	skel.init({
 		reset: 'full',
 		breakpoints: {
-			global:		{ range: '*', href: 'user/themes/twenty/css/style.css', containers: 1400, grid: { gutters: 50 } },
-			wide:		{ range: '-1680', href: 'user/themes/twenty/css/style-wide.css', containers: 1200, grid: { gutters: 40 } },
-			normal:		{ range: '-1280', href: 'user/themes/twenty/css/style-normal.css', containers: 960, viewport: { scalable: false } },
-			narrow:		{ range: '-980', href: 'user/themes/twenty/css/style-narrow.css', containers: '95%', grid: { gutters: 30 } },
-			narrower:	{ range: '-840', href: 'user/themes/twenty/css/style-narrower.css', containers: '95%!' },
-			mobile:		{ range: '-736', href: 'user/themes/twenty/css/style-mobile.css', containers: '100%!' }
+			global:		{ range: '*', href: "{{ url('theme://css/style.css') }}", containers: 1400, grid: { gutters: 50 } },
+			wide:		{ range: '-1680', href: "{{ url('theme://css/style-wide.css') }}", containers: 1200, grid: { gutters: 40 } },
+			normal:		{ range: '-1280', href: "{{ url('theme://css/style-normal.css') }}", containers: 960, viewport: { scalable: false } },
+			narrow:		{ range: '-980', href: "{{ url('theme://css/style-narrow.css') }}", containers: '95%', grid: { gutters: 30 } },
+			narrower:	{ range: '-840', href: "{{ url('theme://css/style-narrower.css') }}", containers: '95%!' },
+			mobile:		{ range: '-736', href: "{{ url('theme://css/style-mobile.css') }}", containers: '100%!' }
 		},
 		plugins: {
 			layers: {
@@ -131,3 +132,4 @@
 	});
 
 })(jQuery);
+</script>

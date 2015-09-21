@@ -10,10 +10,10 @@
 
     <section class="wrapper style4 special container 75%">
         <div class="content">
-            {% if config.plugins.simple_form.enabled %}
+           {% if config.plugins.simple_form.enabled %}
                 {% set simple_form_config = page.header.simple_form ?: config.themes.twenty.simple_form %}
-                {{ simple_form(simple_form_config) }}
-            {% endif %}
+                  {{ simple_form(simple_form_config) }}
+        {% endif %}
         </div>
 
     </section>

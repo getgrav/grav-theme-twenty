@@ -1,0 +1,18 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<article id="main">
+    <header class="special container">
+        <span class="icon fa-thumbs-up"></span>
+        <h2>{{ page.header.title }}</h2>
+    </header>
+
+    <section class="wrapper style4 special container 75%">
+        <div class="content">
+          {{ page.content }}
+        </div>
+
+    </section>
+
+</article>
+{% endblock %}

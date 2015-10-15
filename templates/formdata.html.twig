@@ -1,0 +1,15 @@
+{% extends 'partials/base.html.twig' %}
+{% block content %}
+<article id="main">
+  <header class="special container">
+    <span class="icon fa-envelope"></span>
+    <h2>{{ form.message }}</h2>
+  </header>
+  <section class="wrapper style4 special container 75%">
+    <div class="content">
+      {{ content }}
+      {% include "forms/data.html.twig" %}
+    </div>
+  </section>
+</article>
+{% endblock %}

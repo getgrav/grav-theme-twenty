@@ -1,3 +1,11 @@
+# v1.4.0
+## 10/16/2015
+
+1. [](#new)
+    * Twenty codebase updated to latest release
+    * Various fixes and improvements
+    * Menu generated automatically from collection of pages
+
 # v1.3.0
 ## 10/15/2015
 

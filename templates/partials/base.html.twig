@@ -9,36 +9,16 @@
         <link rel="icon" type="image/png" href="{{ theme_url }}/images/favicon.png" />
 
         {% block stylesheets %}
-                {% do assets.addCss('theme://css/skel.css') %}
-                {% do assets.addCss('theme://css/style.css') %}
-                {% do assets.addCss('theme://css/style-wide.css') %}
-                {% do assets.addCss('theme://css/style-noscript.css') %}
+                {% do assets.addCss('theme://assets/css/main.css') %}
                 {% if browser.getBrowser == 'msie' and browser.getVersion == 8 %}
-                    {% do assets.addCss('theme://css/ie/v8.css') %}
+                    {% do assets.addCss('theme://assets/css/ie8.css') %}
                 {% endif %}
                 {% if browser.getBrowser == 'msie' and browser.getVersion == 9 %}
-                    {% do assets.addCss('theme://css/ie/v9.css') %}
+                    {% do assets.addCss('theme://assets/css/ie9.css') %}
                 {% endif %}
         {% endblock %}
-        <noscript>
         {{ assets.css() }}
-        </noscript>
 
-        {% block javascripts %}
-            {% if browser.getBrowser == 'msie' and browser.getVersion == 8 %}
-                 {% do assets.addJs('theme://css/ie/html5shiv.js') %}
-            {% endif %}
-            {% do assets.add('jquery',101) %}
-            {% do assets.addJs('theme://js/jquery.dropotron.min.js') %}
-            {% do assets.addJs('theme://js/jquery.scrolly.min.js') %}
-            {% do assets.addJs('theme://js/jquery.scrollgress.min.js') %}
-            {% do assets.addJs('theme://js/skel.min.js') %}
-            {% do assets.addJs('theme://js/skel-layers.min.js') %}
-        {% endblock %}
-        {{ assets.js() }}
-
-        {% include 'partials/init.html.twig' %}
-        
         {% endblock head%}
     </head>
     <body class="{{ page.header.body_class }}">
@@ -54,6 +34,23 @@
         {% block footer %}
             {% include 'partials/footer.html.twig' %}
         {% endblock %}
+
+        {% block javascripts %}
+            {% if browser.getBrowser == 'msie' and browser.getVersion == 8 %}
+                 {% do assets.addJs('theme://assets/js/ie/html5shiv.js') %}
+            {% endif %}
+            {% do assets.add('jquery',101) %}
+            {% do assets.addJs('theme://assets/js/jquery.dropotron.min.js') %}
+            {% do assets.addJs('theme://assets/js/jquery.scrolly.min.js') %}
+            {% do assets.addJs('theme://assets/js/jquery.scrollgress.min.js') %}
+            {% do assets.addJs('theme://assets/js/skel.min.js') %}
+            {% do assets.addJs('theme://assets/js/util.js') %}
+            {% if browser.getBrowser == 'msie' and browser.getVersion == 8 %}
+                 {% do assets.addJs('theme://assets/js/ie/respond.min.js') %}
+            {% endif %}
+            {% do assets.addJs('theme://assets/js/main.js') %}
+        {% endblock %}
+        {{ assets.js() }}
 
     </body>
 </html>

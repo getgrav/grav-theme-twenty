@@ -1713,7 +1713,9 @@
 	}
 
 /* Form */
-
+.form-textarea-wrapper.long textarea {
+	height: 300px;
+}
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],

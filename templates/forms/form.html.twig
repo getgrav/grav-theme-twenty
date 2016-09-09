@@ -1,0 +1,23 @@
+{% extends 'forms/default/form.html.twig' %}
+
+{% block inner_markup_fields_start %}
+<div class="row 50%">
+{% endblock %}
+
+{% block inner_markup_fields_end %}
+</div>
+{% endblock %}
+
+{% block inner_markup_buttons_start %}
+<div class="row">
+    <div class="12u">
+{% endblock %}
+
+{% block inner_markup_buttons_end %}
+  </div>
+</div>
+{% endblock %}
+
+{% block button_classes %}
+  class="{{ button.classes|default('button') }} button special"
+{% endblock %}

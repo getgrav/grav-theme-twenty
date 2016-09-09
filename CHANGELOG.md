@@ -1,3 +1,9 @@
+# v1.6.0
+## 09/09/2016
+
+1. [](#improved)
+    * Update forms for the newest Form plugin markup. Drop totally custom form markup, extend from forms default twig files
+
 # v1.5.0
 ## 07/14/2016
 
@@ -7,7 +13,7 @@
 1. [](#bugfix)
     * Use protocol independent url for Google Font
     * Add nonce to the custom form page template
-    
+
 # v1.4.0
 ## 10/16/2015
 

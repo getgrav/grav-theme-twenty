@@ -12,6 +12,9 @@ keywords: twenty, theme, onepage, modern, fast, responsive, html5, css3
 bugs: https://github.com/getgrav/grav-theme-twenty/issues
 license: MIT
 
+dependencies:
+  - { name: form, version: '>=2.0.2' }
+
 form:
   validation: loose
   fields:

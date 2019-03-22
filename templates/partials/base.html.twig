@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
 <head>
     {% block head %}
         <meta charset="utf-8" />
@@ -17,9 +17,11 @@
                     {% do assets.addCss('theme://assets/css/ie9.css') %}
                 {% endif %}
         {% endblock %}
-        {{ assets.css() }}
 
-        {% endblock head%}
+        {% block assets deferred %}
+            {{ assets.css()|raw }}
+        {% endblock %}
+    {% endblock head%}
     </head>
     <body class="{{ page.header.body_class }}">
 
@@ -50,7 +52,9 @@
             {% endif %}
             {% do assets.addJs('theme://assets/js/main.js') %}
         {% endblock %}
-        {{ assets.js() }}
+        
+        {{ assets.js()|raw }}
+        {{ assets.js('bottom')|raw }} 
 
     </body>
 </html>

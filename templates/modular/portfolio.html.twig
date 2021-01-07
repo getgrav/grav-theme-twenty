@@ -1,7 +1,7 @@
 <section class="wrapper style3 container special">
 
     <header class="major">
-        <h2>{{ page.header.title }}</h2>
+        <h2>{{ page.header.title|raw }}</h2>
     </header>
 
     {% for row in page.header.portfolio|batch(2) %}
@@ -32,4 +32,5 @@
         </ul>
     </footer>
 
-</section>    
+
+</section>

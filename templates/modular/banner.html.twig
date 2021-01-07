@@ -3,7 +3,7 @@
         <header>
             <h2>{{ page.header.title }}</h2>
         </header>
-        {{ content }}
+        {{ content|raw }}
         <footer>
             <ul class="buttons vertical">
                 {% for button in page.header.buttons %}

@@ -4,7 +4,7 @@
     <header class="special container">
         <span class="icon fa-exclamation-triangle"></span>
         <h2>Error {{ page.header.http_response_code }}</h2>
-        <p>{{ page.content }}</p>
+        <p>{{ page.content|raw }}</p>
     </header>
 </article>
 {% endblock %}

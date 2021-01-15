@@ -1,3 +1,11 @@
+# v1.7.1
+## 01/15/2021
+
+1. [](#improved)
+    * Fixed autoescaping in preparation for Grav 1.7
+    * Make links optional in portfolio [#10](https://github.com/getgrav/grav-theme-twenty/pull/10)
+    * Only show submenu when one is defined [#11](https://github.com/getgrav/grav-theme-twenty/pull/11)
+
 # v1.7.0
 ## 03/21/2019
 

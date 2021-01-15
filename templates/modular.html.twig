@@ -5,14 +5,14 @@
 
 
 {% block content %}
-    {{ page.content }}
+    {{ page.content|raw }}
     {% for module in page.collection() %}
         {% if module.menu == 'before_article' %}
-            {{ module.content }}
+            {{ module.content|raw }}
         {% endif %}
     {% endfor %}
     <article id="main">
-        
+
         {% if page.header.subtitle or page.header.description or page.header.icon %}
             <header class="special container">
                 <span class="icon fa-{{ page.header.icon }}"></span>
@@ -23,13 +23,13 @@
 
         {% for module in page.collection() %}
             {% if module.menu != 'before_article' and module.menu != 'after_article' %}
-                {{ module.content }}
+                {{ module.content|raw }}
             {% endif %}
         {% endfor %}
     </article>
     {% for module in page.collection() %}
         {% if module.menu == 'after_article' %}
-            {{ module.content }}
+            {{ module.content|raw }}
         {% endif %}
     {% endfor %}
 {% endblock %}

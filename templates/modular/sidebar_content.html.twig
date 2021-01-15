@@ -8,7 +8,7 @@
                 <header>
                     <h3>{{ module.title }}</h3>
                 </header>
-                <p>{{ module.content }}</p>
+                <p>{{ module.content|raw }}</p>
                 {% if module.buttons %}
                     <footer>
                         <ul class="buttons">
@@ -19,6 +19,6 @@
                     </footer>
                 {% endif %}
             </section>
-        {% endfor %} 
+        {% endfor %}
     </div>
 </div>

@@ -1,5 +1,5 @@
 <header class="special container">
     <span class="icon fa-{{ page.header.icon }}"></span>
-    <h2>{{ page.header.title }}</h2>
-    {{ content }}
+    <h2>{{ page.header.title|raw }}</h2>
+    {{ content|raw }}
 </header>

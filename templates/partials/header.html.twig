@@ -21,6 +21,7 @@
             <a href="{{ mitem.link }}">{{ mitem.text }}</a>
           </li>
           {% endfor %}
+          {% if site.submenu %}
           <li class="submenu">
             <a href="">Submenu</a>
             <ul>
@@ -29,6 +30,7 @@
               {% endfor %}
             </ul>
           </li>
+          {% endif %}
         </ul>
       </li>
 

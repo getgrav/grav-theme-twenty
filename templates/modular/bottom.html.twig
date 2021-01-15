@@ -1,7 +1,7 @@
 <section id="cta">
     <header>
-        <h2>{{page.header.title}}</h2>
-        {{ content }}
+        <h2>{{page.header.title|raw}}</h2>
+        {{ content|raw }}
     </header>
     <footer>
         <ul class="buttons">

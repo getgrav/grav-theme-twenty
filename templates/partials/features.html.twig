@@ -1,0 +1,14 @@
+<section class="features-section">
+    <div class="container">
+        <h2>{{ section_title }}</h2>
+        <p class="section-subtitle">{{ section_subtitle }}</p>
+        
+        <div class="features-grid">
+            {% for feature in features %}
+                <div class="feature-item">
+                    <img src="{{ feature.image }}" alt="{{ feature.title }}" class="feature-image" />
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

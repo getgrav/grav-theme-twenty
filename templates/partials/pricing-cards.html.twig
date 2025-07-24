@@ -1,0 +1,49 @@
+<section class="pricing-section">
+    <div class="container">
+        <h2>{{ section_title }}</h2>
+        <p class="section-subtitle">{{ section_subtitle }}</p>
+        
+        <div class="pricing-toggle">
+            <span class="toggle-label">Monthly</span>
+            <label class="switch">
+                <input type="checkbox" id="pricing-toggle">
+                <span class="slider round"></span>
+            </label>
+            <span class="toggle-label">Yearly</span>
+        </div>
+        
+        <div class="pricing-grid">
+            {% for plan in pricing_plans %}
+                <div class="pricing-card {% if plan.featured %}featured{% endif %}">
+                    <div class="plan-name" style="color: {{ plan.color }}">{{ plan.name }}</div>
+                    <div class="plan-price">
+                        <div class="price monthly">{{ plan.monthly_price }}</div>
+                        <div class="price annual" style="display: none;">{{ plan.annual_price }}</div>
+                        <div class="price-period">/user/month</div>
+                    </div>
+                    
+                    <ul class="plan-features">
+                        {% for feature in plan.features %}
+                            <li>
+                                <span class="feature-check">✓</span>
+                                {{ feature }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    
+                    <a href="{{ plan.button_url }}" class="btn btn-block {% if plan.featured %}btn-primary{% else %}btn-outline{% endif %}">
+                        {{ plan.button_text }}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        
+        {% if show_contact_section %}
+            <div class="pricing-contact">
+                <h3>{{ contact_title }}</h3>
+                <p>{{ contact_description }}</p>
+                <a href="{{ contact_button_url }}" class="btn btn-outline">{{ contact_button_text }}</a>
+            </div>
+        {% endif %}
+    </div>
+</section>

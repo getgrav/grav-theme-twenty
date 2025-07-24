@@ -1,0 +1,18 @@
+<section class="os-section">
+    <div class="container">
+        <h2>{{ section_title }}</h2>
+        <p class="section-subtitle">{{ section_subtitle }}</p>
+        
+        <div class="os-grid">
+            {% for item in os_items %}
+                <div class="os-item">
+                    <div class="os-icon">
+                        <img src="{{ item.icon }}" alt="{{ item.title }}" />
+                    </div>
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

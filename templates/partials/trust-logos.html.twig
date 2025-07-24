@@ -1,0 +1,13 @@
+<section class="trust-section">
+    <div class="container">
+        <h2>{{ section_title }}</h2>
+        
+        <div class="trust-logos">
+            {% for logo in logos %}
+                <div class="trust-logo">
+                    <img src="{{ logo.image }}" alt="{{ logo.name }}" />
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

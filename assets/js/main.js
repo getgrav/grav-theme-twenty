@@ -4,6 +4,8 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
+
 (function($) {
 
 	skel.breakpoints({
@@ -116,3 +118,35 @@
 	});
 
 })(jQuery);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', function() {
+      mainNav.classList.toggle('active');
+    });
+  }
+  
+  // Pricing toggle
+  const pricingToggle = document.querySelector('#pricing-toggle');
+  const monthlyPrices = document.querySelectorAll('.price.monthly');
+  const annualPrices = document.querySelectorAll('.price.annual');
+  
+  if (pricingToggle && monthlyPrices.length && annualPrices.length) {
+    pricingToggle.addEventListener('change', function() {
+      if (this.checked) {
+        // Annual pricing
+        monthlyPrices.forEach(el => el.style.display = 'none');
+        annualPrices.forEach(el => el.style.display = 'block');
+      } else {
+        // Monthly pricing
+        monthlyPrices.forEach(el => el.style.display = 'block');
+        annualPrices.forEach(el => el.style.display = 'none');
+      }
+    });
+  }
+});

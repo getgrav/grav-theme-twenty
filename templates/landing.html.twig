@@ -1,0 +1,102 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    {# Hero Section #}
+    {% include 'partials/hero.html.twig' with {
+        'hero_title': page.header.hero_title ?? 'The #1 Open-Source CRM',
+        'hero_subtitle': page.header.hero_subtitle ?? 'Powerful, customizable and free for everyone',
+        'hero_button': page.header.hero_button ?? {'text': 'Get Started', 'url': '#'},
+        'hero_image': page.media[page.header.hero_image].url ?? null
+    } %}
+    
+    {# OS Section #}
+    {% include 'partials/os-section.html.twig' with {
+        'section_title': page.header.os_section_title ?? 'An Operating System',
+        'section_subtitle': page.header.os_section_subtitle ?? 'Customize and extend with modules and integrations',
+        'os_items': page.header.os_items ?? [
+            {
+                'icon': url('theme://images/icon1.png'),
+                'title': 'Modules',
+                'description': 'Extend functionality with modules'
+            },
+            {
+                'icon': url('theme://images/icon2.png'),
+                'title': 'Database',
+                'description': 'Store your data securely'
+            },
+            {
+                'icon': url('theme://images/icon3.png'),
+                'title': 'API',
+                'description': 'Connect with other services'
+            }
+        ]
+    } %}
+    
+    {# Features Section #}
+    {% include 'partials/features.html.twig' with {
+        'section_title': page.header.features_title ?? 'View all the features',
+        'section_subtitle': page.header.features_subtitle ?? 'Everything you need to manage your business',
+        'features': page.header.features ?? [
+            {'image': url('theme://images/feature1.png')},
+            {'image': url('theme://images/feature2.png')},
+            {'image': url('theme://images/feature3.png')}
+        ]
+    } %}
+    
+    {# Power Section #}
+    <section class="power-section">
+        <div class="container">
+            <h2>{{ page.header.power_title ?? 'The Power' }}</h2>
+            <p class="section-subtitle">{{ page.header.power_subtitle ?? 'Powerful features to help you manage your business' }}</p>
+            
+            <div class="power-content">
+                <div class="power-image">
+                    <img src="{{ page.media[page.header.power_image].url ?? url('theme://images/power.png') }}" alt="Power" />
+                </div>
+                <div class="power-text">
+                    <h3>{{ page.header.power_feature_title ?? 'Staying connected' }}</h3>
+                    <p>{{ page.header.power_feature_description ?? 'Keep in touch with your team and customers' }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    {# Open Source Section #}
+    <section class="open-source-section">
+        <div class="container">
+            <h2>{{ page.header.open_source_title ?? 'Open Source' }}</h2>
+            <p class="section-subtitle">{{ page.header.open_source_subtitle ?? 'Free and open for everyone to use and contribute' }}</p>
+        </div>
+    </section>
+    
+    {# Words Section #}
+    <section class="words-section">
+        <div class="container">
+            <h2>{{ page.header.words_title ?? 'Words from users' }}</h2>
+            <div class="testimonials-grid">
+                {% for testimonial in page.header.testimonials ?? [] %}
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="{{ testimonial.avatar }}" alt="{{ testimonial.name }}" class="testimonial-avatar" />
+                            <div class="testimonial-meta">
+                                <h4>{{ testimonial.name }}</h4>
+                                <p>{{ testimonial.role }}</p>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">{{ testimonial.text }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+    {# Tech Section #}
+    <section class="tech-section">
+        <div class="container">
+            <h2>{{ page.header.tech_title ?? 'Tech Diagram' }}</h2>
+            <div class="tech-diagram">
+                <img src="{{ page.media[page.header.tech_diagram].url ?? url('theme://images/diagram.png') }}" alt="Tech Diagram" />
+            </div>
+        </div>
+    </section>
+{% endblock %}

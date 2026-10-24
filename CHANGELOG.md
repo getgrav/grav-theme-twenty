@@ -1,3 +1,9 @@
+# v1.7.2
+## 10/23/2026
+
+1. [](#bugfix)
+    * Page titles and subtitles that use HTML such as `<strong>` render it again on Grav 2 instead of showing the tags
+
 # v1.7.1
 ## 01/15/2021
 

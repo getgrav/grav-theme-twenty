@@ -4,7 +4,7 @@
             <a href="#" class="image featured"><img src="{{ page.media[page.header.featured_image].url }}" alt="" /></a>
         {% endif %}
         <header>
-            <h3>{{ page.header.title }}</h3>
+            <h3>{{ page.header.title|raw }}</h3>
         </header>
         {{ content|raw }}
     </section>
